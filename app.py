@@ -18,7 +18,7 @@ def move_robot():
         response = requests.post(ros_endpoint, json=command)
         return response.text, response.status_code
     except requests.exceptions.RequestException as e:
-        return f"Error contacting ROS server: {e}", 500
+        print("Internal Error")
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
